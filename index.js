@@ -1,5 +1,4 @@
 const { ApolloServer, gql } = require('apollo-server');
-const PORT = process.env.PORT || 4000;
 
 const typeDefs = gql`
   type TodoItem {
@@ -31,6 +30,6 @@ const resolvers = {
 
 const server = new ApolloServer({ typeDefs, resolvers });
 
-server.listen(PORT).then(({ url }) => {
+server.listen().then(({ url }) => {
   console.log(`>>>>>>>> Server ready at ${url}`);
 });
